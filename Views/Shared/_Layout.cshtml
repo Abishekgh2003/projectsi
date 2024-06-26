@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - scopewebsite</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/scopewebsite.styles.css" asp-append-version="true" />
+    <style>
+        .menubar1{
+            height: 60px;
+            width: 1250px;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+        }
+        .menubar {
+            background-color: rgba(6, 6, 85, 0.952);
+            font-family: Verdana;
+            
+            display: flex;
+        }
+
+        .menubar ul {
+            list-style-type: none;
+            padding: px;
+            margin-left: 60px;
+            margin-top: px;
+        }
+
+        .menubar li {
+            display: inline-block;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .menubar a {
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .menubar a:hover {
+                color: gold;
+            }
+
+            .menubar a:visited {
+                color: gold;
+            }
+            .li1{
+                margin-left: 100px;
+            }
+    </style>
+</head>
+<body>
+    <header class="container-fluid" >
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  box-shadow mb-3 menubar1">
+            
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between menubar">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="page1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Courses" asp-action="page2">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Placement">Placement Cell</a>
+                        </li>
+                    </ul>
+                    <img class="im-1 img-fluid" src="~/websitematerial/bird.png" alt="noTALLOW">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                        <a class="nav-link text-white li1" asp-area="" asp-controller="Home" asp-action="Know">Know SCOPE INDIA</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Contact" asp-action="page5">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="Register" asp-action="page6"><input type="submit" formaction="" value="Register Now" class="register"></a>
+                        </li>
+                    </ul>
+                </div>
+            
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid">
+            &copy; 2024 - scopewebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
