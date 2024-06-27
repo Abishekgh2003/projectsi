@@ -16,6 +16,7 @@ namespace scopewebsite.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult page5(Class1 con)
         {

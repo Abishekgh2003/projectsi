@@ -1,4 +1,5 @@
-﻿@* <form asp-controller="Register" asp-action="page6">
+﻿<form asp-controller="Register" asp-action="page6">
+
     <label asp-for="firstname"> First Name : </label>
     <input asp-for="firstname" type="text" />
 
@@ -10,4 +11,26 @@
 
     <label asp-for="dob"> Date of Birth : </label>
     <input asp-for="dob" type="text" />
-</form> *@
+
+    <label asp-for="email"> Email : </label>
+    <input asp-for="email" type="email" />
+
+    <label asp-for="phone"> Phone Number : </label>
+    <input asp-for="phone" type="number" />
+
+    <label asp-for="country"> Country : </label>
+    <input asp-for="country" type="text" />
+
+    <label asp-for="state"> State : </label>
+    <input asp-for="state" type="text" />
+
+    <label asp-for="city"> City : </label>
+    <input asp-for="city" type="text" />
+
+    <label asp-for="hobbies"> Hobbies : </label>
+    <input asp-for="hobbies" type="checkbox" />
+
+    <label asp-for="upload"> Upload avatar : </label>
+    <input asp-for="upload" type="file" />
+
+</form>
