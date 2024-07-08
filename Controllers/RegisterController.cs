@@ -1,15 +1,46 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using scopewebsite.Models;
+﻿using form.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
-namespace scopewebsite.Controllers
+namespace form.Controllers
 {
     public class RegisterController : Controller
     {
-        public IActionResult page6(Class6 reg)
+        [BindProperty]
+        public List<string> Hobbies { get; set; }
+        string hobbies;
+        public IActionResult page6()
         {
-            SqlConnection newconobj = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            newconobj.Open();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult page6(Form fm)
+        {
+            if (Hobbies != null && Hobbies.Count > 0)
+            {
+                foreach (var item in Hobbies)
+                {
+                    hobbies += item + ";";
+                }
+            }
+
+            SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FormData;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("insert into Register(Name,Age,Country,State,City,PhoneNumber,Email,Gender,Hobbies) values(@name,@age,@country,@state,@city,@phonenumber,@email,@gender,@hobbies)", con);
+            cmd.Parameters.AddWithValue("@name", fm.Name);
+            cmd.Parameters.AddWithValue("@age", fm.Age);
+            cmd.Parameters.AddWithValue("@country", fm.Country);
+            cmd.Parameters.AddWithValue("@state", fm.State);
+            cmd.Parameters.AddWithValue("@city", fm.City);
+            cmd.Parameters.AddWithValue("@phonenumber", fm.PhoneNumber);
+            cmd.Parameters.AddWithValue("@email", fm.Email);
+            cmd.Parameters.AddWithValue("@gender", fm.Gender);
+            cmd.Parameters.AddWithValue("@hobbies", hobbies);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
             return View();
         }
     }

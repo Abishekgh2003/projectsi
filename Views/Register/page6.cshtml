@@ -1,36 +1,153 @@
-﻿<form asp-controller="Register" asp-action="page6">
+﻿@model form.Models.Form
 
-    <label asp-for="firstname"> First Name : </label>
-    <input asp-for="firstname" type="text" />
+<div class="container mt-5">
+    <h2 class="mb-4">Registration Form</h2>
+    <form asp-action="register" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label" asp-for="Name">Name:</label>
+            <input type="text" asp-for="Name" class="form-control" >
+            <span asp-validation-for="Name"></span>
+        </div>
 
-    <label asp-for="lastname"> Last Name : </label>
-    <input asp-for="lastname" type="text" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="Age">Age:</label>
+            <input type="number" asp-for="Age" class="form-control" >
+            <span asp-validation-for="Age"></span>
+        </div>
 
-    <label asp-for="gender"> Gender :</label>
-    <input asp-for="gender" type="text" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="Country">Country:</label>
+            <select asp-for="Country" name="country" class="form-select" onchange="updateStates()">
+                <option value="" disabled selected>Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+            </select>
+            <span asp-validation-for="Country"></span>
+        </div>
 
-    <label asp-for="dob"> Date of Birth : </label>
-    <input asp-for="dob" type="text" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="State">State:</label>
+            <select id="state" asp-for="State" name="state" class="form-select" onchange="updateCities()" required>
+                <option value="" disabled selected>Select State</option>
+                <option value="tn">tn</option>
+                <option value="tvm">tvm</option>
+            </select>
+            <span asp-validation-for="State"></span>
+        </div>
 
-    <label asp-for="email"> Email : </label>
-    <input asp-for="email" type="email" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="City">City:</label>
+            <select id="city" asp-for="City" name="city" class="form-select" required>
+                <option value="" disabled selected>Select City</option>
+                <option value="kk">kk</option>
+                <option value="kv">kv</option>
+            </select>
+            <span asp-validation-for="City"></span>
+        </div>
 
-    <label asp-for="phone"> Phone Number : </label>
-    <input asp-for="phone" type="number" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="PhoneNumber">Phone Number:</label>
+            <input type="tel" class="form-control" asp-for="PhoneNumber" id="phoneNumber" name="phoneNumber" required>
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
 
-    <label asp-for="country"> Country : </label>
-    <input asp-for="country" type="text" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="Email">Email:</label>
+            <input type="email" class="form-control" asp-for="Email" id="email" name="email" required>
+            <span asp-validation-for="Email"></span>
+        </div>
 
-    <label asp-for="state"> State : </label>
-    <input asp-for="state" type="text" />
+        <div class="mb-3">
+            <label class="form-label" asp-for="Gender">Gender:</label>
+            <div class="form-check">
+                <input type="radio" asp-for="Gender" id="male" name="gender" value="Male" class="form-check-input" required>
+                <label for="male" class="form-check-label">Male</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" asp-for="Gender" id="female" name="gender" value="Female" class="form-check-input" required>
+                <label for="female" class="form-check-label">Female</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" asp-for="Gender" id="other" name="gender" value="Other" class="form-check-input" required>
+                <label for="other" class="form-check-label">Other</label>
+            </div>
+            <span asp-validation-for="Gender"></span>
+        </div>
 
-    <label asp-for="city"> City : </label>
-    <input asp-for="city" type="text" />
+        @{
+            string[] hobbies = { "Reading", "Dancing", "Swimming" };
+        }
 
-    <label asp-for="hobbies"> Hobbies : </label>
-    <input asp-for="hobbies" type="checkbox" />
+        @foreach (var hobby in hobbies)
+        {
+            <label>
+                <input type="checkbox" name="Hobbies" value="@hobby" />
+                @hobby
+            </label>
+            <br />
+        }
 
-    <label asp-for="upload"> Upload avatar : </label>
-    <input asp-for="upload" type="file" />
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </form>
+</div>
 
-</form>
+@section Scripts {
+        @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+    } 
+<script>
+    
+    const locations = {
+        "India": {
+            "Tamilnadu": ["Coimbatore", "Kanyakumari", "Tirunelveli"],
+            "Kerala": ["Trivandrum", "Kochi", "Palakkad"]
+        },
+        "USA": {
+            "Alabama": ["Birmingham", "Montgomery", "Mobile", "Huntsville"],
+            "Alaska": ["Anchorage", "Fairbanks", "Juneau", "Sitka"]
+        }
+    };
+
+    // Function to update the state dropdown based on the selected country
+    function updateStates() {
+        const countrySelect = document.getElementById("country");
+        const stateSelect = document.getElementById("state");
+        const citySelect = document.getElementById("city");
+        const selectedCountry = countrySelect.value;
+
+        // Clear existing options
+        stateSelect.innerHTML = '<option value="" disabled selected>Select State</option>';
+        citySelect.innerHTML = '<option value="" disabled selected>Select City</option>';
+
+        // Populate states based on the selected country
+        if (selectedCountry in locations) {
+            for (const state in locations[selectedCountry]) {
+                const option = document.createElement("option");
+                option.value = state;
+                option.text = state;
+                stateSelect.add(option);
+            }
+        }
+    }
+
+    // Function to update the city dropdown based on the selected state
+    function updateCities() {
+        const countrySelect = document.getElementById("country");
+        const stateSelect = document.getElementById("state");
+        const citySelect = document.getElementById("city");
+        const selectedCountry = countrySelect.value;
+        const selectedState = stateSelect.value;
+
+        // Clear existing options
+        citySelect.innerHTML = '<option value="" disabled selected>Select City</option>';
+
+        // Populate cities based on the selected state
+        if (selectedCountry in locations && selectedState in locations[selectedCountry]) {
+            for (const city of locations[selectedCountry][selectedState]) {
+                const option = document.createElement("option");
+                option.value = city;
+                option.text = city;
+                citySelect.add(option);
+            }
+        }
+    }
+</script>

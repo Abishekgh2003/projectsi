@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|c:\\users\\prem1\\onedrive\\desktop\\project-scopeindia\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|solutionrelative:controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|c:\\users\\prem1\\onedrive\\desktop\\project-scopeindia\\views\\register\\page6.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|solutionrelative:views\\register\\page6.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|c:\\users\\prem1\\onedrive\\desktop\\project-scopeindia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|c:\\users\\prem1\\onedrive\\desktop\\project-scopeindia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB74E68B-D685-40C4-9A7A-7B739C330595}|scopewebsite.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,56 +9,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "page6.cshtml",
-              "DocumentMoniker": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Views\\Register\\page6.cshtml",
-              "RelativeDocumentMoniker": "Views\\Register\\page6.cshtml",
-              "ToolTip": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Views\\Register\\page6.cshtml",
-              "RelativeToolTip": "Views\\Register\\page6.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-25T06:55:41.118Z"
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ContactController.cs",
-              "DocumentMoniker": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Controllers\\ContactController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ContactController.cs",
-              "ToolTip": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Controllers\\ContactController.cs",
-              "RelativeToolTip": "Controllers\\ContactController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T06:52:31.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T06:37:26.872Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\prem1\\OneDrive\\Desktop\\project-scopeindia\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T06:37:23.388Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
