@@ -15,7 +15,7 @@ namespace form.Controllers
         }
 
         [HttpPost]
-        public IActionResult page6(Form fm)
+        public IActionResult page6(Class6 fm)
         {
             if (Hobbies != null && Hobbies.Count > 0)
             {
@@ -25,10 +25,10 @@ namespace form.Controllers
                 }
             }
 
-            SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FormData;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Arun;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("insert into Register(Name,Age,Country,State,City,PhoneNumber,Email,Gender,Hobbies) values(@name,@age,@country,@state,@city,@phonenumber,@email,@gender,@hobbies)", con);
+            SqlCommand cmd = new SqlCommand("insert into Table2(Name,Age,Country,State,City,PhoneNumber,Email,Gender,Hobbies) values(@name,@age,@country,@state,@city,@phonenumber,@email,@gender,@hobbies)", con);
             cmd.Parameters.AddWithValue("@name", fm.Name);
             cmd.Parameters.AddWithValue("@age", fm.Age);
             cmd.Parameters.AddWithValue("@country", fm.Country);
@@ -41,6 +41,10 @@ namespace form.Controllers
             cmd.ExecuteNonQuery();
             con.Close();
 
+            return View("regsus");
+        }
+        public IActionResult regsus()
+        {
             return View();
         }
     }

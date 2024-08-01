@@ -1,4 +1,4 @@
-﻿// Form.cs model
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace form.Models
 {
-    public class Form
+    public class Class6
     {
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }

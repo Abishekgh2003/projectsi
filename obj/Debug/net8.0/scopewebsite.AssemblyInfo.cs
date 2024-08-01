@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("scopewebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bdeb3eca2df6d42790e08c49aed1913511ff92f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a13d6dbc490fd405e7c41132b11d56e31546b222")]
 [assembly: System.Reflection.AssemblyProductAttribute("scopewebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("scopewebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
