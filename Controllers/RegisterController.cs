@@ -7,7 +7,7 @@ namespace form.Controllers
     public class RegisterController : Controller
     {
         [BindProperty]
-        public List<string> Hobbies { get; set; }
+        public List<string> Hobbies { get; set; }/*hello*/
         string hobbies;
         public IActionResult page6()
         {
